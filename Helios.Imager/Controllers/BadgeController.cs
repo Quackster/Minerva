@@ -29,7 +29,7 @@ namespace Helios.Imager.Controllers
                     var badgeData = badge.Render(gifEncoder: true);
 
                     if (badgeData != null)
-                        return File(badgeData, "image/png");
+                        return File(badgeData, "image/gif");
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace Helios.Imager.Controllers
                     var badgeData = badge.Render(gifEncoder: true);
 
                     if (badgeData != null)
-                        return File(badgeData, "image/png");
+                        return File(badgeData, "image/gif");
                 }
                 else
                 {
