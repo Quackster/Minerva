@@ -1,3 +1,9 @@
 [submodule "Flazzy"]
 	path = Flazzy
 	url = https://github.com/Quackster/Flazzy
+[submodule "Avatara"]
+	path = Avatara
+	url = https://github.com/Quackster/Avatara
+[submodule "Badger"]
+	path = Badger
+	url = https://github.com/Quackster/Badger
