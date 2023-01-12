@@ -9,7 +9,7 @@ namespace Helios.Imager.Controllers
     public class FigureController : Controller
     {
         private readonly ILogger<FigureController> _logger;
-        private FiguredataReader? figuredataReader;
+        private static FiguredataReader? figuredataReader;
 
         public FigureController(ILogger<FigureController> logger)
         {
