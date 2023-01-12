@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helios.Imager", "Helios.Imager\Helios.Imager.csproj", "{0ECF7BA5-A20C-4C69-ABD1-0B19CE39F854}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minerva", "Minerva\Minerva.csproj", "{0ECF7BA5-A20C-4C69-ABD1-0B19CE39F854}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avatara", "Avatara\Avatara\Avatara.csproj", "{3F38BBE8-5269-437E-AE11-0F23649168B1}"
 EndProject
