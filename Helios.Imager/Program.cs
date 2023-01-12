@@ -19,7 +19,7 @@ namespace Helios.Imager
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseRouting();
 
             app.MapControllerRoute(
