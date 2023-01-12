@@ -4,12 +4,12 @@
 ## Cloning this repository
 
 ```
-$ git clone --recursive https://github.com/Quackster/Kepler
+$ git clone --recursive https://github.com/Quackster/Helios.Imager
 ```
 
 **or**
 
 ```
-$ git clone https://github.com/Quackster/Kepler
+$ git clone https://github.com/Quackster/Helios.Imager
 $ git submodule update --init --recursive
 
