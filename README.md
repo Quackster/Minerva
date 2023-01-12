@@ -19,11 +19,11 @@ Run the project.
 
 (On Linux for example)
 
-``./AvataraWebApp --urls=http://*:8090/``
+``./Minerva --urls=http://*:8090/``
 
 (On Windows for example)
 
-``AvataraWebApp.exe --urls=http://*:8090/``
+``Minerva.exe --urls=http://*:8090/``
 
 
 The endpoints will be available:
