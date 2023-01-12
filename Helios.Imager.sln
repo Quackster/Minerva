@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avatara", "Avatara\Avatara\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Badger", "Badger\Badger\Badger.csproj", "{E48C13EC-9975-46C2-A041-9B24568DED03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flazzy", "Flazzy\Flazzy\Flazzy.csproj", "{0816AC66-191D-42DE-B442-5309CC793BB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flazzy", "Avatara\Flazzy\Flazzy\Flazzy.csproj", "{B329EB02-6E7A-4858-A64F-4B8362D721E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{E48C13EC-9975-46C2-A041-9B24568DED03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E48C13EC-9975-46C2-A041-9B24568DED03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E48C13EC-9975-46C2-A041-9B24568DED03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0816AC66-191D-42DE-B442-5309CC793BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0816AC66-191D-42DE-B442-5309CC793BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0816AC66-191D-42DE-B442-5309CC793BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0816AC66-191D-42DE-B442-5309CC793BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B329EB02-6E7A-4858-A64F-4B8362D721E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B329EB02-6E7A-4858-A64F-4B8362D721E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B329EB02-6E7A-4858-A64F-4B8362D721E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B329EB02-6E7A-4858-A64F-4B8362D721E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
