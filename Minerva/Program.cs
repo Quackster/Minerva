@@ -1,4 +1,4 @@
-namespace Helios.Imager
+namespace Minerva
 {
     public class Program
     {

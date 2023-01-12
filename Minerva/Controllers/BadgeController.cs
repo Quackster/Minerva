@@ -5,7 +5,7 @@ using Badger;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Helios.Imager.Controllers
+namespace Minerva.Controllers
 {
     public class BadgeController : Controller
     {
