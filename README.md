@@ -1,4 +1,4 @@
-# Helios.Imager
+# Minerva
  Imager for Habbo Hotel releases Shockwave and Flash. It uses the two projects (Badger, and Avatara) as libraries combined into one, to make the web server.
 
 # Installing
