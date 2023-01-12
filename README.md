@@ -49,12 +49,12 @@ echo file_get_contents("http://127.0.0.1:8090/?" . $_SERVER['QUERY_STRING']);
 ## Cloning this repository
 
 ```
-$ git clone --recursive https://github.com/Quackster/Helios.Imager
+$ git clone --recursive https://github.com/Quackster/Minerva
 ```
 
 **or**
 
 ```
-$ git clone https://github.com/Quackster/Helios.Imager
+$ git clone https://github.com/Quackster/Minerva
 $ git submodule update --init --recursive
 
