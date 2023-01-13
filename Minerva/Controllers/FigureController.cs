@@ -9,7 +9,6 @@ namespace Minerva.Controllers
     public class FigureController : Controller
     {
         private readonly ILogger<FigureController> _logger;
-        private static FiguredataReader? figuredataReader;
 
         public FigureController(ILogger<FigureController> logger)
         {
@@ -19,16 +18,6 @@ namespace Minerva.Controllers
         [HttpGet("habbo-imaging/avatarimage")]
         public IActionResult Index()
         {
-            if (figuredataReader == null)
-            {
-                FigureExtractor.Parse();
-
-                figuredataReader = new FiguredataReader();
-                figuredataReader.LoadFigurePalettes();
-                figuredataReader.loadFigureSetTypes();
-                figuredataReader.LoadFigureSets();
-            }
-
             string size = "b";
             int bodyDirection = 2;
             int headDirection = 2;
@@ -131,18 +120,10 @@ namespace Minerva.Controllers
 
             if (figure != null && figure.Length > 0)
             {
-                var avatar = new Avatar(figure, size, bodyDirection, headDirection, figuredataReader, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
+                var avatar = new Avatar(FiguredataReader.Instance, figure, size, bodyDirection, headDirection, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
+                var figureData = avatar.Run();
 
-                try
-                {
-                    var figureData = avatar.Run();
-                    return File(figureData, "image/png");
-
-                }
-                catch (Exception e)
-                {
-
-                }
+                return File(figureData, "image/png");
             }
 
             return StatusCode(403);

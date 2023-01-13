@@ -1,3 +1,6 @@
+using Avatara;
+using Avatara.Figure;
+
 namespace Minerva
 {
     public class Program
@@ -26,7 +29,25 @@ namespace Minerva
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            LoadFigureAssets(app.Services.CreateScope());
+
             app.Run();
+        }
+
+        private static void LoadFigureAssets(IServiceScope scope)
+        {
+            Console.WriteLine("Loading flash assets...");
+
+            FlashExtractor.Instance.Load();
+
+            Console.WriteLine($"{FlashExtractor.Instance.Parts.Count} flash assets loaded");
+
+            Console.WriteLine("Loading figure data...");
+
+            FiguredataReader.Instance.Load();
+            Console.WriteLine($"{FiguredataReader.Instance.FigureSets.Count} figure sets loaded");
+            Console.WriteLine($"{FiguredataReader.Instance.FigureSetTypes.Count} figure set types loaded");
+            Console.WriteLine($"{FiguredataReader.Instance.FigurePalettes.Count} figure palettes loaded");
         }
     }
 }
