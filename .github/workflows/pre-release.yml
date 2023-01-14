@@ -31,19 +31,47 @@ jobs:
       - name: Build Linux 64-bit
         run: dotnet publish -c Release -r linux-x64 --output linux-x64 Minerva.sln --self-contained false
         
+      - name: Unzip figuredata file
+        uses: montudor/action-zip@v1
+        with:
+          args: unzip -qq ./tools/figuredata-shockwave.zip -d linux-x64
+          
+      - name: Unzip badges file
+        uses: montudor/action-zip@v1
+        with:
+          args: unzip -qq ./tools/badges.zip -d linux-x64
+          
+      - name: File release preparation
+        run: |
+          sudo cp tools/badge_resource.json linux-x64
+        
       - name: Compress release files
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r ./Minerva-${{ steps.sha-short.outputs.sha-short }}-linux-x64.zip linux-x64
+          args: zip -qq -r ./Minerva-linux-x64.zip linux-x64
             
       # Publish Windows 64-bit executable
       - name: Build Windows 64-bit
         run: dotnet publish -c Release -r win-x64 --output win-x64 Minerva.sln --self-contained false
 
+      - name: Unzip figuredata file
+        uses: montudor/action-zip@v1
+        with:
+          args: unzip -qq ./tools/figuredata-shockwave.zip -d win-x64
+          
+      - name: Unzip badges file
+        uses: montudor/action-zip@v1
+        with:
+          args: unzip -qq ./tools/badges.zip -d win-x64
+          
+      - name: File release preparation
+        run: |
+          sudo cp tools/badge_resource.json win-x64
+
       - name: Compress release files
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r ./Minerva-${{ steps.sha-short.outputs.sha-short }}-win-x64.zip win-x64
+          args: zip -qq -r ./Minerva-win-x64.zip win-x64
           
       # Create latest tag
       - uses: "marvinpinto/action-automatic-releases@latest"
@@ -53,5 +81,5 @@ jobs:
           prerelease: true
           title: "Development Build ${{ steps.sha-short.outputs.sha-short }}"
           files: |
-            Minerva-${{ steps.sha-short.outputs.sha-short }}-linux-x64.zip
-            Minerva-${{ steps.sha-short.outputs.sha-short }}-win-x64.zip
+            Minerva-linux-x64.zip
+            Minerva-win-x64.zip
