@@ -1,0 +1,57 @@
+name: Create Pre-Release
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  pre-release:
+    permissions: write-all
+    
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+          
+      - id: sha-short
+        name: Get short SHA
+        run: echo "::set-output name=sha-short::$(git rev-parse --short HEAD)"
+      
+      # Publish Linux 64-bit executable
+      - name: Build Linux 64-bit
+        run: dotnet publish -c Release -r linux-x64 --output linux-x64 Minerva.sln --self-contained false
+        
+      - name: Compress release files
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r ./Minerva-${{ steps.sha-short.outputs.sha-short }}-linux-x64.zip linux-x64
+            
+      # Publish Windows 64-bit executable
+      - name: Build Windows 64-bit
+        run: dotnet publish -c Release -r win-x64 --output win-x64 Minerva.sln --self-contained false
+
+      - name: Compress release files
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r ./Minerva-${{ steps.sha-short.outputs.sha-short }}-win-x64.zip win-x64
+          
+      # Create latest tag
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build ${{ steps.sha-short.outputs.sha-short }}"
+          files: |
+            Minerva-${{ steps.sha-short.outputs.sha-short }}-linux-x64.zip
+            Minerva-${{ steps.sha-short.outputs.sha-short }}-win-x64.zip
