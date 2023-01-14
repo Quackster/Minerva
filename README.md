@@ -14,7 +14,7 @@ When used, the following endpoints will be available:
 
 ``/habbo-imaging/badge-fill/{badge-code}.gif``
 
-# Installing
+## Download
 
 The latest builds for Linux and Windows are found on the [latest](https://github.com/Quackster/Minerva/releases/tag/latest) tag.
 
@@ -22,6 +22,10 @@ The latest builds for Linux and Windows are found on the [latest](https://github
 |---|---|
 | Linux (64-bit) | [Minerva-linux-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-linux-x64.zip) |
 | Windows (64-bit) | [Minerva-windows-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-windows-x64.zip) |
+
+## Setup
+
+To run Minerva, you need to install .NET 6 [runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) for your operating system.
 
 Once downloaded, you may execute ``./Minerva`` (Linux) or ``Minerva.exe`` (Windows).
 
@@ -58,7 +62,7 @@ http://localhost:5000/habbo-imaging/avatarimage?figure=hd-180-1.hr-100-61.ch-210
 
 By default the port it listens on will be 5000 but this can be changed to 8080 (or any other port for your liking) with the command line arguments ``--urls=http://*:8080/``
 
-### Group badges in-client setup
+#### Group badges in-client setup
 
 Minerva has a special path to use for the Shockwave client, ensure that "badge-fill" is being used.
 
@@ -81,7 +85,7 @@ Group badges should now work in-game.
 ![image](https://user-images.githubusercontent.com/1328523/212458081-6f3d390b-48de-4401-bb56-8beab3250269.png)
 
 
-## Adding custom clothes
+### Adding custom clothes
 
 1. Adding more clothes is easy, ensure /xml/ and /images/ are either empty or don't exist in /figuredata/
 
@@ -91,7 +95,7 @@ Group badges should now work in-game.
 
 Run Minerva and it should be supported.
 
-## How do I use it for my site written in a different language?
+### How do I use it for my site written in a different language?
 
 You can proxy it.
 
@@ -103,7 +107,7 @@ header ('Content-Type: image/png');
 echo file_get_contents("http://127.0.0.1:8090/?" . $_SERVER['QUERY_STRING']);
 ?>
 ```
-## Cloning this repository
+### Cloning this repository
 
 ```
 $ git clone --recursive https://github.com/Quackster/Minerva
