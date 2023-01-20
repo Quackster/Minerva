@@ -21,7 +21,7 @@ The latest builds for Linux and Windows are found on the [latest](https://github
 | OS | Download |
 |---|---|
 | Linux (64-bit) | [Minerva-linux-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-linux-x64.zip) |
-| Windows (64-bit) | [Minerva-windows-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-windows-x64.zip) |
+| Windows (64-bit) | [Minerva-windows-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-win-x64.zip) |
 
 ## Setup
 
