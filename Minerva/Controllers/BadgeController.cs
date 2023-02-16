@@ -22,6 +22,12 @@ namespace Minerva.Controllers
             if (badgeCode != null && badgeCode.Length > 0)
             {
                 var badge = GetFromServer.ParseBadgeData(badgeCode);
+
+                badge.Parts.ForEach(x =>
+                {
+                    x.IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER;
+                });
+
                 //var avatar = new Avatar(figure, size, bodyDirection, headDirection, figuredataReader, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
 
                 if (badgeCode.EndsWith(".gif"))
@@ -49,8 +55,14 @@ namespace Minerva.Controllers
             if (badgeCode != null && badgeCode.Length > 0)
             {
                 var badge = GetFromServer.ParseBadgeData(badgeCode);
+
+                badge.Parts.ForEach(x =>
+                {
+                    x.IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER;
+                });
+
                 //var avatar = new Avatar(figure, size, bodyDirection, headDirection, figuredataReader, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
-                
+
                 var badgeData = badge.Render(gifEncoder: true, forceWhiteBackground: true);
 
                 if (badgeData != null)
