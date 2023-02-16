@@ -28,16 +28,19 @@ namespace Minerva
                 Console.WriteLine();
             }
 
-            if (argsList.Contains("--shockwave-badge-render"))
+            if (argsList.Contains("--flash-badge-render"))
             {
-                Console.WriteLine("Shockwave badge rendering enabled");
-                SHOCKWAVE_BADGE_RENDER = true;
+                Console.WriteLine("Flash (client versions above and including 2013+) badge rendering enabled");
+                
+                SHOCKWAVE_BADGE_RENDER = false;
+                FLASH_BADGE_RENDER = true;
             }
             else
             {
-                Console.WriteLine("Flash (client versions above and including 2013+) badge rendering enabled");
+                Console.WriteLine("Shockwave badge rendering enabled");
+                
+                SHOCKWAVE_BADGE_RENDER = true;
                 FLASH_BADGE_RENDER = false;
-
             }
 
             var builder = WebApplication.CreateBuilder(args);
