@@ -107,6 +107,15 @@ header ('Content-Type: image/png');
 echo file_get_contents("http://127.0.0.1:8090/?" . $_SERVER['QUERY_STRING']);
 ?>
 ```
+
+```nginx
+location /imaging/ {
+        proxy_pass http://127.0.0.1:8090;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+```
 ### Cloning this repository
 
 ```
