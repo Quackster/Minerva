@@ -23,6 +23,8 @@ The latest builds for Linux and Windows are found on the [latest](https://github
 | Linux (64-bit) | [Minerva-linux-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-linux-x64.zip) |
 | Windows (64-bit) | [Minerva-win-x64.zip](https://github.com/Quackster/Minerva/releases/download/latest/Minerva-win-x64.zip) |
 
+This project is using both [Avatara](https://github.com/Quackster/Avatara) and [Badger](https://github.com/Quackster/Badger) as dependencies.
+
 ## Setup
 
 To run Minerva, you need to install .NET 6 [runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) for your operating system.
