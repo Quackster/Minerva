@@ -27,7 +27,7 @@ This project is using both [Avatara](https://github.com/Quackster/Avatara) and [
 
 ## Setup
 
-To run Minerva, you need to install .NET 6 [runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) for your operating system.
+To run Minerva, you need to install .NET 8 [runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) for your operating system.
 
 Once downloaded, you may execute ``./Minerva`` (Linux) or ``Minerva.exe`` (Windows).
 
