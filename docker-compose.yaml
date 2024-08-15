@@ -1,0 +1,9 @@
+services:
+   minerva:
+      build: .
+      networks:
+         - havana_havana
+
+networks:
+   havana_havana:
+      external: true
