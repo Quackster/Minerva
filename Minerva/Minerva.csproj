@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avatara-Imager" Version="1.1.0.7130916" />
-    <PackageReference Include="Badger-Imager" Version="1.5.0.5051513" />
+    <PackageReference Include="Badger-Imager" Version="1.6.0.3201203" />
   </ItemGroup>
 
 </Project>
