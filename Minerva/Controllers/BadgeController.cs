@@ -1,9 +1,5 @@
-﻿using Avatara;
-using Avatara.Extensions;
-using Avatara.Figure;
-using Badger;
+﻿using Badger;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Minerva.Controllers
 {
@@ -17,16 +13,14 @@ namespace Minerva.Controllers
         }
 
         [HttpGet("habbo-imaging/badge/{badgeCode}")]
-        public IActionResult Badge(string badgeCode)
+        public IActionResult BadgeImager(string badgeCode)
         {
             if (badgeCode != null && badgeCode.Length > 0)
             {
-                var badge = GetFromServer.ParseBadgeData(badgeCode);
-
-                badge.Parts.ForEach(x =>
+                var badge = Badge.ParseBadgeData(new BadgeSettings
                 {
-                    x.IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER;
-                });
+                    IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER
+                }, badgeCode);
 
                 //var avatar = new Avatar(figure, size, bodyDirection, headDirection, figuredataReader, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
 
@@ -54,12 +48,17 @@ namespace Minerva.Controllers
         {
             if (badgeCode != null && badgeCode.Length > 0)
             {
-                var badge = GetFromServer.ParseBadgeData(badgeCode);
+                /*var badge = GetFromServer.ParseBadgeData(badgeCode);
 
                 badge.Parts.ForEach(x =>
                 {
                     x.IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER;
-                });
+                });*/
+
+                var badge = Badge.ParseBadgeData(new BadgeSettings
+                {
+                    IsShockwaveBadge = Program.SHOCKWAVE_BADGE_RENDER
+                }, badgeCode);
 
                 //var avatar = new Avatar(figure, size, bodyDirection, headDirection, figuredataReader, action: action, gesture: gesture, headOnly: headOnly, frame: frame, carryDrink: carryDrink, cropImage: cropImage);
 
