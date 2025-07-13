@@ -2,7 +2,7 @@
 
 Imager for Habbo Hotel releases Shockwave and Flash. It uses the two projects (Badger, and Avatara) as libraries combined into one, to make the web server.
 
-It supports rendering both figures/avatars and group badges.
+It supports rendering both figures/avatars and group badges, and now supports pre-v18 figure codes to render.
 
 When used, the following endpoints will be available:
 
