@@ -86,6 +86,31 @@ Group badges should now work in-game.
 
 ![image](https://user-images.githubusercontent.com/1328523/212458081-6f3d390b-48de-4401-bb56-8beab3250269.png)
 
+### Habbo Figure Conversion API
+
+Convert old Habbo figure codes to the new format.
+
+## Endpoint
+
+GET /habbo-imaging/avatarimage/convert?figure=YOUR_OLD_FIGURE_CODE
+
+makefile
+Copy code
+
+## Example
+
+**Request:**
+GET /habbo-imaging/avatarimage/convert?figure=1000118001270012900121001
+
+css
+Copy code
+
+**Response:**
+```json
+{
+  "figure": "hr-100-1150.hd-180-1026.ch-210-1284.lg-270-1223.sh-290-1247.ha-0-1150"
+}
+```
 
 ### Adding custom clothes
 

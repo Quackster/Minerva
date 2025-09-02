@@ -1,4 +1,5 @@
-﻿using Avatara;
+﻿using Alcosmos.Figure;
+using Avatara;
 using Avatara.Extensions;
 using Avatara.Figure;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,28 @@ namespace Minerva.Controllers
         public FigureController(ILogger<FigureController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet("habbo-imaging/avatarimage/convert")]
+        public IActionResult Convert()
+        {
+            string? figure = null;
+
+            if (Request.Query.ContainsKey("figure"))
+            {
+                Request.Query.TryGetValue("figure", out var value);
+                figure = value.ToString();
+            }
+
+            try
+            {
+                return Json(new { figure = FigureConverter.Instance.ConvertOldToNew(figure) });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred during conversion");
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet("habbo-imaging/avatarimage")]
