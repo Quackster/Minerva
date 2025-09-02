@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avatara-Imager" Version="1.0.1" />
+    <PackageReference Include="Avatara-Imager" Version="1.0.2" />
     <PackageReference Include="Badger-Imager" Version="1.6.0.3201203" />
   </ItemGroup>
 
